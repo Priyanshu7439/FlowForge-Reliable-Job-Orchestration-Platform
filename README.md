@@ -164,7 +164,6 @@ sequenceDiagram
   participant W as Worker
   participant R as Redis/BullMQ
   participant E as FastAPI executor
-
   B->>A: Login; receive flowforge_session cookie
   B->>A: POST /api/v1/jobs
   A->>P: Transaction: Job QUEUED + OutboxEvent
