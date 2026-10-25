@@ -463,13 +463,23 @@ Detailed references:
 
 Real screenshots can be added later without changing the README structure. The following views are present in the application:
 
+- Login Page
+<img width="1547" height="951" alt="Screenshot 2026-10-25 134846" src="https://github.com/user-attachments/assets/39f63fab-e9cd-4fb3-9ee3-c8cd49f6fbf7" />
+
 - Dashboard / hiring workspace
+<img width="1886" height="902" alt="Screenshot 2026-10-25 134930" src="https://github.com/user-attachments/assets/48671e54-6c69-451b-ae09-70e5d90dc001" />
+
 - Job Studio
-- Job details, attempts, and results
+<img width="1897" height="903" alt="Screenshot 2026-10-25 135018" src="https://github.com/user-attachments/assets/e4a71e8e-7816-4c0c-a2ac-8ef058b86b99" />
+
 - System topology
-- Schedules
-- Explore Jobs and Post a Job
+<img width="1540" height="862" alt="Screenshot 2026-10-23 145712" src="https://github.com/user-attachments/assets/0dcfbf8a-b0bb-4d47-be79-2254e9b9c57b" />
+
+- Settings
+<img width="1892" height="731" alt="Screenshot 2026-10-25 135128" src="https://github.com/user-attachments/assets/994e356e-d7eb-4bd4-b2d1-9535d5d75f0f" />
+
 - Candidate or recruiter profile
+<img width="1765" height="908" alt="Screenshot 2026-10-25 135109" src="https://github.com/user-attachments/assets/4a9c7b04-1145-4aab-8998-a5b36a516bae" />
 
 <!-- TODO: add reviewed screenshots under docs/screenshots/ after capturing them from a running local environment.
 Suggested files: dashboard.png, job-studio.png, job-detail.png, topology.png, schedules.png, recruitment.png, profile.png.
