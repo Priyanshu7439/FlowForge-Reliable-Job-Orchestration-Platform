@@ -164,7 +164,7 @@ sequenceDiagram
   participant W as Worker
   participant R as Redis/BullMQ
   participant E as FastAPI executor
-  B->>A: Login; receive flowforge_session cookie
+  B->>A: Login, receive flowforge_session cookie
   B->>A: POST /api/v1/jobs
   A->>P: Transaction: Job QUEUED + OutboxEvent
   P-->>A: Commit
@@ -175,18 +175,18 @@ sequenceDiagram
     W->>P: Set publishedAt
   end
   R-->>W: execute-job message
-  W->>P: CAS QUEUED/RETRYING to RUNNING; create attempt
+  W->>P: CAS QUEUED/RETRYING to RUNNING, create attempt
   W->>E: POST /internal/execute with job payload and attempt
   alt Success
     E-->>W: ok, summary, result
-    W->>P: Complete attempt; upsert JobResult; complete Job
+    W->>P: Complete attempt, upsert JobResult, complete Job
   else Retryable failure
     E-->>W: retryable error
-    W->>P: Fail attempt; set Job RETRYING
+    W->>P: Fail attempt, set Job RETRYING
     W-->>R: BullMQ exponential retry
   else Final failure
     E-->>W: non-retryable error or retry limit reached
-    W->>P: Fail attempt; set Job FAILED
+    W->>P: Fail attempt, set Job FAILED
   end
   W-->>A: Publish best-effort lifecycle event through Redis Pub/Sub
   A-->>B: SSE event when subscribed
