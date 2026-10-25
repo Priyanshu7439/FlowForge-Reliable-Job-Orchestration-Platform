@@ -1,0 +1,11 @@
+node_modules/
+.next/
+dist/
+coverage/
+.git/
+.npm-cache/
+.docker-cli/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+*.log

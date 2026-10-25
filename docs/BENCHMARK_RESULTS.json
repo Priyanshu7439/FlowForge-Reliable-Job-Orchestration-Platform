@@ -1,0 +1,176 @@
+{
+  "generatedAt": "2026-10-24T17:16:53.5943295+05:30",
+  "project": "FlowForge",
+  "classification": "local_measurement_not_production_telemetry",
+  "environment": {
+    "os": "Windows 11 build 26200",
+    "node": "v24.14.0",
+    "npm": "11.9.0",
+    "python": "3.14.3",
+    "logicalProcessors": 12,
+    "dockerCli": "unavailable in benchmark shell",
+    "databaseMigrationStatus": "up_to_date",
+    "databaseMigrationCount": 3
+  },
+  "automatedTests": {
+    "executed": 45,
+    "passed": 45,
+    "failed": 0,
+    "skipped": 0,
+    "passRatePercent": 100,
+    "byService": {
+      "api": { "executed": 18, "passed": 18, "failed": 0, "skipped": 0 },
+      "worker": { "executed": 6, "passed": 6, "failed": 0, "skipped": 0 },
+      "web": { "executed": 15, "passed": 15, "failed": 0, "skipped": 0 },
+      "executor": { "executed": 6, "passed": 6, "failed": 0, "skipped": 0 }
+    },
+    "coverage": { "status": "NOT_MEASURED", "reason": "No coverage tool is configured and no dependency was installed." }
+  },
+  "apiLatency": {
+    "method": "sequential HTTP requests after one warm-up; 10 samples per endpoint; monotonic Stopwatch; concurrency 1",
+    "rateLimitNote": "A discarded 30-sample run exceeded the API's global limiter and produced 429 responses. The measurements below were rerun after the window reset.",
+    "endpoints": [
+      { "name": "health_live", "sampleCount": 10, "expectedStatus": 200, "successCount": 10, "unexpectedCount": 0, "errorRatePercent": 0, "requestsPerSecond": 116.166, "minMs": 7.87, "averageMs": 8.608, "p50Ms": 8.378, "p95Ms": 10.202, "p99Ms": 10.202, "maxMs": 10.202 },
+      { "name": "auth_me_unauthenticated", "sampleCount": 10, "expectedStatus": 401, "successCount": 10, "unexpectedCount": 0, "errorRatePercent": 0, "requestsPerSecond": 505.178, "minMs": 1.372, "averageMs": 1.979, "p50Ms": 1.898, "p95Ms": 2.886, "p99Ms": 2.886, "maxMs": 2.886 },
+      { "name": "profile_unauthenticated", "sampleCount": 10, "expectedStatus": 401, "successCount": 10, "unexpectedCount": 0, "errorRatePercent": 0, "requestsPerSecond": 657.384, "minMs": 1.317, "averageMs": 1.521, "p50Ms": 1.527, "p95Ms": 1.823, "p99Ms": 1.823, "maxMs": 1.823 },
+      { "name": "recruitment_jobs_unauthenticated", "sampleCount": 10, "expectedStatus": 401, "successCount": 10, "unexpectedCount": 0, "errorRatePercent": 0, "requestsPerSecond": 455.446, "minMs": 1.367, "averageMs": 2.196, "p50Ms": 2.157, "p95Ms": 3.266, "p99Ms": 3.266, "maxMs": 3.266 },
+      { "name": "dashboard_summary_unauthenticated", "sampleCount": 10, "expectedStatus": 401, "successCount": 10, "unexpectedCount": 0, "errorRatePercent": 0, "requestsPerSecond": 652.903, "minMs": 1.316, "averageMs": 1.532, "p50Ms": 1.493, "p95Ms": 1.846, "p99Ms": 1.846, "maxMs": 1.846 }
+    ]
+  },
+  "jobProcessing": { "status": "HISTORICAL_NOT_MEASURED", "reason": "The original audit did not run queue benchmarks. Later isolated measurements are recorded under isolatedBenchmarkRun, reliabilityBenchmarkRun, and repeat50Benchmarks." },
+  "reliability": {
+    "retryRecovery": { "status": "PARTIALLY_VERIFIED", "numerator": 1, "denominator": 1, "percent": 100, "scope": "single deterministic FastAPI failure-simulation unit fixture, not a full queue pipeline" },
+    "idempotency": { "status": "NOT_MEASURED", "reason": "No isolated write benchmark was run." },
+    "cancellation": { "status": "UNIT_VERIFIED", "evidence": "API state-transition test passed." }
+  },
+  "security": { "status": "PARTIALLY_VERIFIED", "negativeAssertionsPassed": true, "separatePassRate": null, "reason": "Authorization assertions are embedded in the API suite rather than tagged as a separately executed security suite." },
+  "matching": { "status": "RULE_VALIDATED", "accuracy": null, "reason": "No labeled ground-truth dataset exists; deterministic skill/experience fixtures and incomplete-profile behavior passed." },
+  "e2e": { "status": "NOT_MEASURED", "reason": "No Playwright setup or safe isolated authenticated test accounts were available." },
+  "continuationAudit": {
+    "timestamp": "2026-10-24T17:36:00+05:30",
+    "isolation": {
+      "status": "BLOCKED",
+      "dockerCli": "unavailable in the current shell",
+      "postgresTcpPort": "reachable on localhost:5432, but database identity and isolation could not be established read-only",
+      "redisTcpPort": "reachable on localhost:6379, but namespace isolation could not be established read-only",
+      "safeConclusion": "Do not send write traffic to the reachable development endpoints. No isolated PostgreSQL database and Redis namespace were configured or proven."
+    },
+    "integrationBenchmarks": {
+      "status": "BLOCKED",
+      "jobLatency": null,
+      "successfulThroughputJobsPerSecond": null,
+      "successFailureRate": null,
+      "retryRecovery": null,
+      "idempotency": null,
+      "authenticatedRecruitmentWorkflow": null,
+      "reason": "A separate writable PostgreSQL/Redis environment was unavailable; Docker inspection and disposable service creation were not permitted or accessible."
+    },
+    "safeValidationRun": {
+      "status": "VERIFIED",
+      "commands": ["npm.cmd test", "npm.cmd --workspace apps/web run test", "python -m pytest services/executor/tests -q", "npm.cmd run typecheck"],
+      "results": { "api": "18/18", "worker": "6/6", "web": "15/15", "executor": "6/6", "typecheck": "passed" },
+      "writeTraffic": false
+    }
+  },
+  "latestExecutionAttempt": {
+    "timestamp": "2026-10-24",
+    "status": "BLOCKED",
+    "dockerCliAvailableInCurrentShell": false,
+    "benchmarkComposeFilePresent": false,
+    "benchmarksExecuted": false,
+    "reason": "The Codex shell cannot access Docker and the isolated benchmark Compose definition has not been created. Reachable development ports were not used because isolation could not be proven.",
+    "historicalMeasurementsPreserved": true
+  },
+  "isolatedBenchmarkRun": {
+    "generatedAt": "2026-10-24T12:34:24.2598929Z",
+    "status": "MEASURED",
+    "rawEvidenceFile": "docs/benchmark-run-results.json",
+    "environment": {
+      "baseUrl": "http://127.0.0.1:4400/api/v1",
+      "taskType": "JSON_TRANSFORM",
+      "jobCount": 10,
+      "concurrency": 1,
+      "warmupJobs": 0,
+      "pollIntervalMs": 100,
+      "existingDevelopmentDataUsed": false,
+      "durationSeconds": null,
+      "durationNote": "The raw runner recorded throughput but did not separately persist total wall-clock duration."
+    },
+    "endToEndLatencyMs": {
+      "p50": 970.352,
+      "p95": 1062.921,
+      "p99": 1062.921,
+      "max": 1062.921
+    },
+    "throughput": {
+      "submittedJobsPerSecond": 1.006,
+      "completedJobsPerSecond": 1.006
+    },
+    "outcomes": {
+      "submitted": 10,
+      "completed": 10,
+      "failed": 0,
+      "cancelled": 0,
+      "successRatePercent": 100,
+      "failureRatePercent": 0,
+      "terminalStateEvidence": "Each sample was polled through GET /jobs/:id and returned COMPLETED with resultPersisted=true in the raw artifact. The separate GET /jobs/:id/result endpoint was not called."
+    },
+    "retry": {
+      "status": "MEASURED",
+      "finalStatus": "COMPLETED",
+      "attempts": 2,
+      "attemptStatuses": ["FAILED", "COMPLETED"],
+      "recovered": true,
+      "recoveryRatePercent": 100,
+      "scope": "one isolated FAILURE_SIMULATION job"
+    },
+    "idempotency": {
+      "status": "MEASURED",
+      "firstStatus": 202,
+      "secondStatus": 202,
+      "sameJobId": true,
+      "conflictStatus": 409,
+      "duplicateSuppressed": true,
+      "scope": "one repeated same-key request and one conflicting payload request"
+    },
+    "limitations": [
+      "Sequential concurrency-1 workload only; not a load or scalability test.",
+      "The raw per-job attemptCount field is null in all samples because the runner did not preserve the single-object attempt response count.",
+      "No authenticated recruitment workflow was included in this run."
+    ]
+  },
+  "reliabilityBenchmarkRun": {
+    "generatedAt": "2026-10-25T06:29:26.7919811Z",
+    "status": "MEASURED",
+    "rawEvidenceFile": "docs/benchmark-reliability.json",
+    "environment": {
+      "taskType": "JSON_TRANSFORM",
+      "jobCount": 10,
+      "concurrency": 1,
+      "warmupJobs": 0,
+      "pollIntervalMs": 1000,
+      "existingDevelopmentDataUsed": false
+    },
+    "latencyMs": { "p50": 1062.571, "p95": 1081.744, "p99": 1081.744, "max": 1081.744 },
+    "throughput": { "submittedJobsPerSecond": 0.926, "completedJobsPerSecond": 0.926 },
+    "outcomes": { "submitted": 10, "completed": 10, "failed": 0, "cancelled": 0, "observedSuccessRatePercent": 100, "observedFailureRatePercent": 0, "persistedResultSamples": 10 },
+    "retry": { "status": "MEASURED", "attempts": 2, "attemptStatuses": ["FAILED", "COMPLETED"], "recovered": true },
+    "idempotency": { "status": "MEASURED", "firstStatus": 202, "secondStatus": 202, "sameJobId": true, "conflictStatus": 409, "duplicateSuppressed": true },
+    "limitations": ["Bounded local sample; not production or load validation.", "Result persistence is represented by the raw resultPersisted field; the separate result endpoint was not called."]
+  },
+  "repeat50Benchmarks": {
+    "status": "MEASURED",
+    "taskType": "JSON_TRANSFORM",
+    "jobCountPerRun": 50,
+    "warmupJobs": 0,
+    "pollIntervalMs": 1000,
+    "existingDevelopmentDataUsed": false,
+    "runs": [
+      { "rawEvidenceFile": "docs/benchmark-run-50-c1-repeat.json", "concurrency": 1, "p50Ms": 1040.045, "p95Ms": 1063.622, "p99Ms": 2074.47, "maxMs": 2074.47, "submittedJobsPerSecond": 0.921, "completedJobsPerSecond": 0.921, "completed": 50, "failed": 0, "cancelled": 0, "persistedResultSamples": 50 },
+      { "rawEvidenceFile": "docs/benchmark-run-50-c5-repeat.json", "concurrency": 5, "p50Ms": 1059.288, "p95Ms": 1133.206, "p99Ms": 1141.883, "maxMs": 1141.883, "submittedJobsPerSecond": 4.552, "completedJobsPerSecond": 4.552, "completed": 50, "failed": 0, "cancelled": 0, "persistedResultSamples": 50 }
+    ],
+    "completedThroughputRatioC5ToC1": 4.942,
+    "approximateThroughputIncreasePercent": 394.2,
+    "limitations": ["Small local bounded runs; no production-scale or uptime claim.", "End-to-end latency includes the 1000 ms polling interval and is not executor execution time.", "The earlier non-repeat 50-job artifacts used different conditions and are preserved separately."]
+  }
+}

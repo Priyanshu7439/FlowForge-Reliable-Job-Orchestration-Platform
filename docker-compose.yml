@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: flowforge
+      POSTGRES_PASSWORD: flowforge
+      POSTGRES_DB: flowforge
+    ports: ["5432:5432"]
+    volumes: [flowforge-postgres:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U flowforge -d flowforge"], interval: 5s, timeout: 5s, retries: 10 }
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    healthcheck: { test: ["CMD", "redis-cli", "ping"], interval: 5s, timeout: 3s, retries: 10 }
+  executor:
+    build: { context: ./services/executor, dockerfile: Dockerfile }
+    environment: [EXECUTOR_SHARED_SECRET=replace-with-an-internal-service-secret]
+    ports: ["8000:8000"]
+    healthcheck: { test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/live')"], interval: 5s, timeout: 3s, retries: 10 }
+  migrate:
+    build: { context: ., dockerfile: services/api/Dockerfile }
+    command: ["npm", "run", "db:migrate:deploy"]
+    environment:
+      DATABASE_URL: postgresql://flowforge:flowforge@postgres:5432/flowforge?schema=public
+    depends_on: { postgres: { condition: service_healthy } }
+  api:
+    build: { context: ., dockerfile: services/api/Dockerfile }
+    environment:
+      DATABASE_URL: postgresql://flowforge:flowforge@postgres:5432/flowforge?schema=public
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: replace-with-a-long-development-secret
+      EXECUTOR_SHARED_SECRET: replace-with-an-internal-service-secret
+      EXECUTOR_URL: http://executor:8000
+      WEB_ORIGIN: http://localhost:3000,http://localhost:3002
+    ports: ["4000:4000"]
+    depends_on: { postgres: { condition: service_healthy }, redis: { condition: service_healthy }, executor: { condition: service_healthy }, migrate: { condition: service_completed_successfully } }
+    healthcheck: { test: ["CMD", "node", "-e", "fetch('http://localhost:4000/health/live').then(r => { if (!r.ok) process.exit(1) })"], interval: 5s, timeout: 3s, retries: 10 }
+  worker:
+    build: { context: ., dockerfile: services/worker/Dockerfile }
+    environment:
+      DATABASE_URL: postgresql://flowforge:flowforge@postgres:5432/flowforge?schema=public
+      REDIS_URL: redis://redis:6379
+      EXECUTOR_SHARED_SECRET: replace-with-an-internal-service-secret
+      EXECUTOR_URL: http://executor:8000
+    depends_on: { postgres: { condition: service_healthy }, redis: { condition: service_healthy }, executor: { condition: service_healthy }, migrate: { condition: service_completed_successfully } }
+  web:
+    build: { context: ., dockerfile: apps/web/Dockerfile }
+    environment: [NEXT_PUBLIC_API_URL=http://localhost:4000/api/v1]
+    ports: ["3000:3000"]
+    depends_on: { api: { condition: service_healthy } }
+volumes:
+  flowforge-postgres:

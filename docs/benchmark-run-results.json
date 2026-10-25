@@ -1,0 +1,140 @@
+﻿{
+    "generatedAt":  "2026-10-24T12:34:24.2598929Z",
+    "status":  "MEASURED",
+    "environment":  {
+                        "baseUrl":  "http://127.0.0.1:4400/api/v1",
+                        "taskType":  "JSON_TRANSFORM",
+                        "jobCount":  10,
+                        "concurrency":  1,
+                        "warmupJobs":  0,
+                        "pollIntervalMs":  100,
+                        "existingDevelopmentDataUsed":  false
+                    },
+    "rawSamples":  [
+                       {
+                           "jobId":  "b8e6deaf-ccd6-46b6-9f77-fbba570e2e70",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  39.109,
+                           "endToEndMs":  1017.737,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "76ad156a-1526-46d9-a67b-4271f2570732",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  18.226,
+                           "endToEndMs":  901.965,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "5dfacd7c-0612-4f7b-b848-f8369909e90b",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  20.689,
+                           "endToEndMs":  1062.921,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "17aac4fa-afa7-4f20-abc7-0765f53e8e00",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  20.73,
+                           "endToEndMs":  993.108,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "bcf8c505-15ed-49ac-a318-afc9bc4f131b",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  20.307,
+                           "endToEndMs":  896.059,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "8c74a3e9-311a-4f60-b8b0-981801e93ace",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  23.561,
+                           "endToEndMs":  970.352,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "2f12739e-fcc8-426e-b6f7-0f5494629a84",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  18.104,
+                           "endToEndMs":  989.382,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "35b82bf8-68dc-46fb-9ab9-07a05518c4c9",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  21.398,
+                           "endToEndMs":  1043.272,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "2f347804-7e4d-426b-8604-807df7b8aa3a",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  19.339,
+                           "endToEndMs":  950.695,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "jobId":  "b0d988d5-f5c2-46cd-a8ac-562c8bb92f57",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  18.411,
+                           "endToEndMs":  934.202,
+                           "attemptCount":  null,
+                           "resultPersisted":  true
+                       }
+                   ],
+    "summary":  {
+                    "endToEndMs":  {
+                                       "p50":  970.352,
+                                       "p95":  1062.921,
+                                       "p99":  1062.921,
+                                       "max":  1062.921
+                                   },
+                    "submittedJobsPerSecond":  1.006,
+                    "completedJobsPerSecond":  1.006,
+                    "outcomes":  {
+                                     "submitted":  10,
+                                     "completed":  10,
+                                     "failed":  0,
+                                     "cancelled":  0,
+                                     "successRatePercent":  100,
+                                     "failureRatePercent":  0
+                                 }
+                },
+    "retry":  {
+                  "jobId":  "e0cde7c0-3cff-4e25-a083-a087e67652d5",
+                  "finalStatus":  "COMPLETED",
+                  "attempts":  2,
+                  "recovered":  true,
+                  "attemptStatuses":  [
+                                          "FAILED",
+                                          "COMPLETED"
+                                      ]
+              },
+    "idempotency":  {
+                        "firstStatus":  202,
+                        "secondStatus":  202,
+                        "sameJobId":  true,
+                        "conflictStatus":  409,
+                        "duplicateSuppressed":  true
+                    }
+}

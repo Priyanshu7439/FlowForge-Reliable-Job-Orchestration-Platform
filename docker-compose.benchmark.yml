@@ -1,0 +1,118 @@
+name: flowforge-benchmark
+
+services:
+  benchmark-postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: flowforge_benchmark
+      POSTGRES_PASSWORD: flowforge_benchmark_local_only
+      POSTGRES_DB: flowforge_benchmark
+    volumes:
+      - flowforge-benchmark-postgres:/var/lib/postgresql/data
+    networks:
+      - flowforge-benchmark-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flowforge_benchmark -d flowforge_benchmark"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  benchmark-redis:
+    image: redis:7-alpine
+    networks:
+      - flowforge-benchmark-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  benchmark-executor:
+    image: flowforgereliablejoborchestrationplatform-executor
+    environment:
+      EXECUTOR_SHARED_SECRET: flowforge-benchmark-internal-secret
+    networks:
+      - flowforge-benchmark-net
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/live')"
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  benchmark-migrate:
+    image: flowforgereliablejoborchestrationplatform-api
+    profiles: [migration]
+    command: ["npm", "run", "db:migrate:deploy"]
+    environment:
+      DATABASE_URL: postgresql://flowforge_benchmark:flowforge_benchmark_local_only@benchmark-postgres:5432/flowforge_benchmark?schema=public
+    networks:
+      - flowforge-benchmark-net
+    depends_on:
+      benchmark-postgres:
+        condition: service_healthy
+
+  benchmark-api:
+    image: flowforgereliablejoborchestrationplatform-api
+    environment:
+      DATABASE_URL: postgresql://flowforge_benchmark:flowforge_benchmark_local_only@benchmark-postgres:5432/flowforge_benchmark?schema=public
+      REDIS_URL: redis://benchmark-redis:6379
+      JWT_SECRET: flowforge-benchmark-jwt-secret-local-only
+      EXECUTOR_SHARED_SECRET: flowforge-benchmark-internal-secret
+      EXECUTOR_URL: http://benchmark-executor:8000
+      WEB_ORIGIN: http://localhost:4400
+      MAX_ATTEMPTS: "3"
+    ports:
+      - "127.0.0.1:4400:4000"
+    networks:
+      - flowforge-benchmark-net
+    depends_on:
+      benchmark-postgres:
+        condition: service_healthy
+      benchmark-redis:
+        condition: service_healthy
+      benchmark-executor:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://localhost:4000/health/live').then(r => { if (!r.ok) process.exit(1) })"
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  benchmark-worker:
+    image: flowforgereliablejoborchestrationplatform-worker
+    environment:
+      DATABASE_URL: postgresql://flowforge_benchmark:flowforge_benchmark_local_only@benchmark-postgres:5432/flowforge_benchmark?schema=public
+      REDIS_URL: redis://benchmark-redis:6379
+      EXECUTOR_SHARED_SECRET: flowforge-benchmark-internal-secret
+      EXECUTOR_URL: http://benchmark-executor:8000
+      MAX_ATTEMPTS: "3"
+    networks:
+      - flowforge-benchmark-net
+    depends_on:
+      benchmark-postgres:
+        condition: service_healthy
+      benchmark-redis:
+        condition: service_healthy
+      benchmark-executor:
+        condition: service_healthy
+
+volumes:
+  flowforge-benchmark-postgres:
+    name: flowforge-benchmark-postgres
+
+networks:
+  flowforge-benchmark-net:
+    name: flowforge-benchmark-net
+    driver: bridge

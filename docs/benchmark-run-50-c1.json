@@ -1,0 +1,542 @@
+﻿{
+    "generatedAt":  "2026-10-25T06:21:18.2710941Z",
+    "status":  "MEASURED",
+    "environment":  {
+                        "baseUrl":  "http://127.0.0.1:4400/api/v1",
+                        "taskType":  "JSON_TRANSFORM",
+                        "jobCount":  50,
+                        "concurrency":  1,
+                        "warmupJobs":  0,
+                        "pollIntervalMs":  2000,
+                        "authenticatedWorkers":  1,
+                        "existingDevelopmentDataUsed":  false
+                    },
+    "rawSamples":  [
+                       {
+                           "sequence":  1,
+                           "jobId":  "321894f1-5303-42dc-b87b-7b452283a21f",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  78.661,
+                           "endToEndMs":  2113.343,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  2,
+                           "jobId":  "3754cca3-cd72-48cd-9f34-213101100572",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  55.816,
+                           "endToEndMs":  2084.513,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  3,
+                           "jobId":  "5c3e739c-c926-4f9e-b22d-835fc7a4849a",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  18.909,
+                           "endToEndMs":  2071.002,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  4,
+                           "jobId":  "b31c5a7a-6971-445f-b96d-edc4cefb90d1",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  23.624,
+                           "endToEndMs":  2052.625,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  5,
+                           "jobId":  "27595f3f-b864-41ea-8321-4e16874ffda8",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  27.775,
+                           "endToEndMs":  2048.548,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  6,
+                           "jobId":  "9f8558d4-7fb6-409e-831b-149e0694ed29",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  13.553,
+                           "endToEndMs":  2027.072,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  7,
+                           "jobId":  "0f12260d-b612-4c29-8d6c-ac3065f28563",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  19.524,
+                           "endToEndMs":  2039.011,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  8,
+                           "jobId":  "7cc6ac28-0281-41b5-87f9-1f4a00e6d0cf",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  52.667,
+                           "endToEndMs":  2067.213,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  9,
+                           "jobId":  "16c1ed51-e863-4da5-827c-fd48cc93dd6d",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  55.722,
+                           "endToEndMs":  2072.949,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  10,
+                           "jobId":  "c76198c7-cd0d-430c-b442-aaa2b20e7982",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  31.297,
+                           "endToEndMs":  2041.22,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  11,
+                           "jobId":  "76f4ac2e-7adf-42b4-b175-54d875a516ab",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  54.017,
+                           "endToEndMs":  2072.567,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  12,
+                           "jobId":  "d6292b01-16a2-45d2-bb21-680ea0d52d57",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  56.195,
+                           "endToEndMs":  2076.557,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  13,
+                           "jobId":  "9d152246-5230-439d-b192-bdf30e30f9eb",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  60.212,
+                           "endToEndMs":  2083.894,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  14,
+                           "jobId":  "42692975-889f-46a6-aa19-fa0e077fd6fe",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  56.116,
+                           "endToEndMs":  2084.429,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  15,
+                           "jobId":  "f9161ac1-6d84-44b4-9cd8-4f673fe0d920",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  22.649,
+                           "endToEndMs":  2048.851,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  16,
+                           "jobId":  "e3f09af0-cc32-48e7-a521-0c89aabcca58",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  19.775,
+                           "endToEndMs":  2051.491,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  17,
+                           "jobId":  "848ed82a-2315-4d14-98c7-5c28a90c47c3",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  13.359,
+                           "endToEndMs":  2054.75,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  18,
+                           "jobId":  "b806fecc-a1c4-4f2c-bb04-b3f9a06d3557",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  26.303,
+                           "endToEndMs":  2055.497,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  19,
+                           "jobId":  "4c8b1c16-b18c-4534-bb66-c5aa9e39a0ec",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  18.077,
+                           "endToEndMs":  2042.149,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  20,
+                           "jobId":  "efc2c6fc-131e-4dba-97e1-eb7b0c4543b8",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  57.902,
+                           "endToEndMs":  2085.087,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  21,
+                           "jobId":  "90716f15-fbc1-4b4a-9287-54cef9b88f24",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  54.959,
+                           "endToEndMs":  2069.114,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  22,
+                           "jobId":  "2a6b9ad1-423a-4b75-9e4d-efc58d38e406",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  61.984,
+                           "endToEndMs":  2084.779,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  23,
+                           "jobId":  "5abab634-c84c-4c1a-ac79-d999a87493ea",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  60.518,
+                           "endToEndMs":  2072.653,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  24,
+                           "jobId":  "0716d0e9-7c92-4495-92f9-c5483e7a0c43",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  54.523,
+                           "endToEndMs":  2086.173,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  25,
+                           "jobId":  "0adabea1-cede-4d3b-a9b1-9267b621a4aa",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  18.638,
+                           "endToEndMs":  2039.43,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  26,
+                           "jobId":  "40be8d9d-3ba4-44f0-9864-e9b1b032215c",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  14.318,
+                           "endToEndMs":  2038.728,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  27,
+                           "jobId":  "a71f74e8-952b-4104-bc24-7a64e9ecff0e",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  17.854,
+                           "endToEndMs":  2036.776,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  28,
+                           "jobId":  "dc59f609-d111-49dc-b574-b924f10b8d8f",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  19.505,
+                           "endToEndMs":  2039.077,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  29,
+                           "jobId":  "ed5c0d79-971a-4649-bfb8-87f0cc7d4c28",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  53.074,
+                           "endToEndMs":  2077.333,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  30,
+                           "jobId":  "b88062b3-03a9-415d-85b6-1b5ef8a9a54f",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  54.326,
+                           "endToEndMs":  2067.167,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  31,
+                           "jobId":  "39b76482-9520-4a47-a8a4-654dce5c697b",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  54.907,
+                           "endToEndMs":  2075.274,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  32,
+                           "jobId":  "f7a94de8-77d6-40a2-b6b4-da271873ff24",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  56.223,
+                           "endToEndMs":  2068.67,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  33,
+                           "jobId":  "bc553c40-54a7-40f3-9937-569b4daf6223",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  53.259,
+                           "endToEndMs":  2069.603,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  34,
+                           "jobId":  "287476a1-834b-4665-8103-c8f8b954d54a",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  60.144,
+                           "endToEndMs":  2089.623,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  35,
+                           "jobId":  "6c5bd11d-21d6-4c8d-970a-d2332097a958",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  53.257,
+                           "endToEndMs":  2078.365,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  36,
+                           "jobId":  "5266e46e-dede-4d74-883e-f074c5142986",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  55.682,
+                           "endToEndMs":  2069.884,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  37,
+                           "jobId":  "d737d617-1deb-4319-ae7a-ea5180d45618",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  60.272,
+                           "endToEndMs":  2074.288,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  38,
+                           "jobId":  "779dbdd3-d554-4406-a4ef-b5122cccce02",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  53.148,
+                           "endToEndMs":  2073.064,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  39,
+                           "jobId":  "4b7b2cbc-b537-49f3-8a31-3791ff86a918",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  54.268,
+                           "endToEndMs":  2073.871,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  40,
+                           "jobId":  "154c205b-1d39-442b-8f3b-6709b9aba579",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  59.127,
+                           "endToEndMs":  2070.782,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  41,
+                           "jobId":  "18ce3ffd-1e13-4ac2-bf7e-88a843257ca9",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  54.292,
+                           "endToEndMs":  2083.258,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  42,
+                           "jobId":  "38b41b16-c540-42a7-874d-2299e90eab2c",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  54.572,
+                           "endToEndMs":  2072.092,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  43,
+                           "jobId":  "f5332200-7aa8-470d-8c20-f06d94756d78",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  58.439,
+                           "endToEndMs":  2084.606,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  44,
+                           "jobId":  "f8dd86e7-b9ca-4061-8e6c-9b059c80b68b",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  24.998,
+                           "endToEndMs":  2049.192,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  45,
+                           "jobId":  "f02958e4-048f-45f4-8de5-992c6b3ab1a8",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  21.311,
+                           "endToEndMs":  2039.119,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  46,
+                           "jobId":  "0ade8093-fed2-4a8e-8004-840970954c80",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  38.467,
+                           "endToEndMs":  2062.254,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  47,
+                           "jobId":  "7ab5d3fa-6dd1-4820-8f7c-50f216c6b874",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  53.512,
+                           "endToEndMs":  2064.147,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  48,
+                           "jobId":  "90f9601d-70b7-4509-b7e3-f3d9a8071d50",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  16.021,
+                           "endToEndMs":  2032.642,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  49,
+                           "jobId":  "967551ed-335c-4a4e-a484-e52e882cb49f",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  52.609,
+                           "endToEndMs":  2069.954,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       },
+                       {
+                           "sequence":  50,
+                           "jobId":  "74779ec1-c918-4acb-871b-4c99884846b5",
+                           "taskType":  "JSON_TRANSFORM",
+                           "status":  "COMPLETED",
+                           "enqueueMs":  18.104,
+                           "endToEndMs":  2039.501,
+                           "attemptCount":  0,
+                           "resultPersisted":  true
+                       }
+                   ],
+    "summary":  {
+                    "endToEndMs":  {
+                                       "p50":  2069.603,
+                                       "p95":  2086.173,
+                                       "p99":  2113.343,
+                                       "max":  2113.343
+                                   },
+                    "submittedJobsPerSecond":  0.483,
+                    "completedJobsPerSecond":  0.483,
+                    "outcomes":  {
+                                     "submitted":  50,
+                                     "completed":  50,
+                                     "failed":  0,
+                                     "cancelled":  0,
+                                     "successRatePercent":  100,
+                                     "failureRatePercent":  0
+                                 }
+                },
+    "retry":  {
+                  "status":  "NOT_MEASURED",
+                  "reason":  "Skipped for this bounded workload run."
+              },
+    "idempotency":  {
+                        "status":  "NOT_MEASURED",
+                        "reason":  "Skipped for this bounded workload run."
+                    }
+}
