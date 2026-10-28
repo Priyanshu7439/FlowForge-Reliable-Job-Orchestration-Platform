@@ -12,7 +12,7 @@ const fake = vi.hoisted(() => {
   const schedules = new Map<string, ScheduleRecord>();
   let sequence = 0;
   const nextId = (prefix: string) => `${prefix}-${++sequence}`;
-  const client = {
+  const transactionClient = {
     user: {
       create: vi.fn(async ({ data }: { data: Omit<UserRecord, 'id'> }) => { const user = { id: nextId('user'), ...data }; users.set(user.id, user); return user; }),
       findUnique: vi.fn(async ({ where }: { where: { id?: string; email?: string } }) => [...users.values()].find((user) => (where.id ? user.id === where.id : user.email === where.email)) ?? null),
@@ -35,12 +35,15 @@ const fake = vi.hoisted(() => {
       deleteMany: vi.fn(async ({ where }: { where: { id: string; ownerId: string } }) => { const schedule = schedules.get(where.id); if (!schedule || schedule.ownerId !== where.ownerId) return { count: 0 }; schedules.delete(where.id); return { count: 1 }; }),
     },
     $queryRaw: vi.fn(async () => [{ '?column?': 1 }]),
-    $transaction: vi.fn(async <T>(operation: ((transaction: typeof client) => Promise<T>) | Promise<unknown>[]) => Array.isArray(operation) ? Promise.all(operation) : operation(client)),
     reset: () => { users.clear(); jobs.clear(); schedules.clear(); outbox.length = 0; sequence = 0; },
     users,
     jobs,
     outbox,
     schedules,
+  };
+  const client = {
+    ...transactionClient,
+    $transaction: vi.fn(async <T>(operation: ((transaction: typeof transactionClient) => Promise<T>) | Promise<unknown>[]) => Array.isArray(operation) ? Promise.all(operation) : operation(transactionClient)),
   };
   return client;
 });
